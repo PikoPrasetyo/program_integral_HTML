@@ -1,0 +1,46 @@
+<!doctype html public "-//W3C//DTD HTML 4.0 //EN">
+
+<html>
+<head>
+       <title>Komputasi Numerik ONLINE (C)opyRight by Piko Prasetyo</title>
+</head>
+<body>
+<B> Metode Numerik ASYIK </B>
+
+<FORM name=Entry>
+ <PRE>   
+   Masukan Batas Atas	: <INPUT name=A><BR>
+   Masukan Batas Bawah	: <INPUT name=B><BR>
+   Masukan Delta X	: <INPUT name=N><BR>
+ </PRE>
+ <INPUT name=Hitung onclick=hitung() type=button value=Hitung>
+</FORM><BR>
+<SCRIPT language=javascript>
+function f(x)
+{
+    return(Math.pow(x,1));
+}
+function hitung()
+{
+    a=parseFloat(document.Entry.A.value);
+    b=parseFloat(document.Entry.B.value);
+	n=parseFloat(document.Entry.N.value);
+	c=0;
+	h=(a-b)/n
+	for(i=0; i<n; i++){
+		k=((f(b+h*i)+f(b+h*(i+1)))/2)*h;
+		c=c+k;
+	}
+	    document.write("Komputasi Numerik Online<br>\n");
+		document.write("Oleh  : Piko Prasetyo(1110171058)<br>\n");
+		document.write("Integral Asyik<br>\n");
+		document.write("--------------------------------------<br>\n");
+		document.write("Nilai Batas Atas	: "+a+"<br>\n");
+	    document.write("Nilai Batas Bawah	: "+b+"<br>\n");
+    	document.write("Nilai Delta X 		: "+n+"<br>\n");
+		document.write("Nilai Luas Hasil 	: "+c+"<br>\n");
+}
+</SCRIPT>
+</body>
+</html>
+
